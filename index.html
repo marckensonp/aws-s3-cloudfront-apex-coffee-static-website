@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Coffee Roasters | Specialty Coffee Subscription</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <!-- Simple Coffee Bean SVG Icon -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c87d4b" stroke-width="2">
+        <ellipse cx="12" cy="12" rx="7" ry="10" transform="rotate(-25 12 12)"/>
+        <path d="M9 5c2 4 2 10 6 14"/>
+      </svg>
+      Apex Coffee Roasters
+    </div>
+    <span class="badge">Hosted on AWS S3 + CloudFront</span>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Small-Batch Roasts Delivered Fresh to Your Door.</h1>
+      <p>Ethically sourced single-origin beans roasted weekly in small batches. Join our launch club for free nationwide shipping on your first bag.</p>
+      <a href="#subscribe"><button class="btn">Join the Launch List</button></a>
+    </div>
+    <div class="hero-art">
+      <!-- Steaming Coffee Mug Vector Illustration -->
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+        <path d="M70 45 C65 30, 80 25, 75 10" stroke="#c87d4b" stroke-width="4" stroke-linecap="round"/>
+        <path d="M100 40 C95 25, 110 20, 105 5" stroke="#c87d4b" stroke-width="4" stroke-linecap="round"/>
+        <path d="M130 45 C125 30, 140 25, 135 10" stroke="#c87d4b" stroke-width="4" stroke-linecap="round"/>
+        <path d="M50 65 H145 V130 C145 155, 125 170, 97.5 170 C70 170, 50 155, 50 130 Z" fill="#2c1e16"/>
+        <path d="M145 80 H162 C174 80, 180 90, 180 105 C180 120, 174 130, 162 130 H145" stroke="#2c1e16" stroke-width="10" stroke-linecap="round"/>
+        <ellipse cx="97.5" cy="65" rx="47.5" ry="10" fill="#5c3a21"/>
+        <rect x="35" y="172" width="125" height="10" rx="5" fill="#c87d4b"/>
+      </svg>
+    </div>
+  </section>
+
+  <h2 class="section-title">Our Signature Roasts</h2>
+  <section class="products">
+    <!-- Roast 1 -->
+    <div class="card">
+      <svg width="90" height="110" viewBox="0 0 90 110" fill="none">
+        <rect x="15" y="15" width="60" height="85" rx="6" fill="#d9a066"/>
+        <path d="M15 15 L25 5 H65 L75 15 Z" fill="#b87e46"/>
+        <rect x="25" y="40" width="40" height="35" rx="4" fill="#ffffff"/>
+        <circle cx="45" cy="57" r="8" fill="#c87d4b"/>
+      </svg>
+      <h3>Morning Summit</h3>
+      <p>Light Roast • Notes of Honey, Citrus &amp; Jasmine</p>
+      <div class="price">$18.00 / 12oz</div>
+      <button class="btn" onclick="selectRoast('Morning Summit')">Select Roast</button>
+    </div>
+
+    <!-- Roast 2 -->
+    <div class="card">
+      <svg width="90" height="110" viewBox="0 0 90 110" fill="none">
+        <rect x="15" y="15" width="60" height="85" rx="6" fill="#7a4b2a"/>
+        <path d="M15 15 L25 5 H65 L75 15 Z" fill="#5c3a21"/>
+        <rect x="25" y="40" width="40" height="35" rx="4" fill="#ffffff"/>
+        <circle cx="45" cy="57" r="8" fill="#5c3a21"/>
+      </svg>
+      <h3>Copper Trail</h3>
+      <p>Medium Roast • Notes of Toasted Almond &amp; Caramel</p>
+      <div class="price">$19.00 / 12oz</div>
+      <button class="btn" onclick="selectRoast('Copper Trail')">Select Roast</button>
+    </div>
+
+    <!-- Roast 3 -->
+    <div class="card">
+      <svg width="90" height="110" viewBox="0 0 90 110" fill="none">
+        <rect x="15" y="15" width="60" height="85" rx="6" fill="#2c1e16"/>
+        <path d="M15 15 L25 5 H65 L75 15 Z" fill="#1a110c"/>
+        <rect x="25" y="40" width="40" height="35" rx="4" fill="#ffffff"/>
+        <circle cx="45" cy="57" r="8" fill="#2c1e16"/>
+      </svg>
+      <h3>Midnight Espresso</h3>
+      <p>Dark Roast • Notes of Dark Chocolate &amp; Molasses</p>
+      <div class="price">$20.00 / 12oz</div>
+      <button class="btn" onclick="selectRoast('Midnight Espresso')">Select Roast</button>
+    </div>
+  </section>
+
+  <section class="signup-box" id="subscribe">
+    <h2>Reserve Your First Bag</h2>
+    <p>Enter your details below to lock in 20% off our launch subscription.</p>
+    <form id="subForm" onsubmit="handleSignup(event)">
+      <input type="text" id="customerName" placeholder="Your Full Name" required />
+      <input type="email" id="customerEmail" placeholder="Email Address" required />
+      <select id="roastChoice">
+        <option value="Morning Summit">Morning Summit (Light Roast)</option>
+        <option value="Copper Trail">Copper Trail (Medium Roast)</option>
+        <option value="Midnight Espresso">Midnight Espresso (Dark Roast)</option>
+      </select>
+      <button type="submit" class="btn">Claim Launch Discount</button>
+    </form>
+    <div id="confirmation"></div>
+  </section>
+
+  <footer>
+    &copy; 2026 Apex Coffee Roasters • Securely delivered via Amazon CloudFront &amp; S3
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
